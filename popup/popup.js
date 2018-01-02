@@ -25,6 +25,11 @@ xhr.addEventListener("readystatechange", function () {
                 meetup_time.classList.add("meetup_time");
                 meetup.appendChild(meetup_time);
 
+                var meetup_venue = document.createElement("div");
+                meetup_venue.appendChild(document.createTextNode(meetup_list[i].venue.name));
+                meetup_venue.classList.add("meetup_venue");
+                meetup.appendChild(meetup_venue);
+
                 var meetup_link = document.createElement("div");
                 meetup_link.setAttribute("hidden", true);
                 meetup_link.appendChild(document.createTextNode(meetup_list[i].link));
@@ -46,7 +51,7 @@ document.addEventListener("click", (e) => {
         target = target.parentElement;
     }
     if (target.classList.contains("meetup_group")) {
-        var link = target.getElementsByTagName("div")[2].textContent;
+        var link = target.getElementsByTagName("div")[3].textContent;
         browser.tabs.create({ url: link });
     }
 });
