@@ -1,16 +1,17 @@
 {
     "manifest_version": 2,
-    "name": "Mozilla Meetups",
-    "version": "1.0",
+    "name": "MozMeets",
+    "version": "1.1",
 
     "description": "Shows meetup events for Mozilla",
 
     "permissions":[
-        "*://api.meetup.com/*"
+        "*://api.meetup.com/*",
+        "*://*.facebook.com/*"
     ],
 
     "browser_action":{
-        "default_title":"Mozilla Meetups",
+        "default_title":"MozMeets",
         "default_popup":"/popup/popup.html"
     }
 }
