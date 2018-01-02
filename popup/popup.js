@@ -1,5 +1,19 @@
 var meetup_list = [];
 
+function get_meetup_time(time) {
+    var date = new Date(time);
+    var months = [
+        "Jan", "Feb", "Mar", "Apr",
+        "May", "Jun", "Jul", "Aug",
+        "Sept", "Oct", "Nov", "Dec"
+    ];
+    return months[date.getMonth()] + " "
+        + date.getDate() + ", "
+        + date.getFullYear() + " "
+        + (date.getHours() < 10 ? "0" : '') + date.getHours() + ":"
+        + (date.getMinutes() < 10 ? "0" : '') + date.getMinutes();
+}
+
 function updateMeetups() {
     if (this.readyState === 4) {
         var data = JSON.parse(this.responseText);
@@ -38,7 +52,7 @@ function updateMeetups() {
                 } else {
                     time = meetup_list[i].start_time;
                 }
-                meetup_time.appendChild(document.createTextNode(time));
+                meetup_time.appendChild(document.createTextNode(get_meetup_time(time)));
                 meetup_time.classList.add("meetup_time");
                 meetup.appendChild(meetup_time);
 

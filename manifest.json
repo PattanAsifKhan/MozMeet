@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "MozMeets",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Shows meetup events for Mozilla",
     "permissions": [
         "*://api.meetup.com/*",
@@ -9,7 +9,7 @@
     ],
     "applications": {
         "gecko": {
-            "id": "mozmeets@moztgap.com"
+            "id": "{d4eeccf3-e8c5-4618-a396-eb337d18fadb}"
         }
     },
     "browser_action": {
