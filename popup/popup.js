@@ -91,6 +91,11 @@ document.addEventListener("click", (e) => {
     }
     if (target.classList.contains("meetup_group")) {
         var link = target.getElementsByTagName("div")[3].textContent;
-        browser.tabs.create({ url: link });
+        browser.tabs.create(
+            {
+                active: true,
+                url: link
+            }
+        );
     }
 });

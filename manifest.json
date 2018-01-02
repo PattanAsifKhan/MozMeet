@@ -2,16 +2,18 @@
     "manifest_version": 2,
     "name": "MozMeets",
     "version": "1.1",
-
     "description": "Shows meetup events for Mozilla",
-
-    "permissions":[
+    "permissions": [
         "*://api.meetup.com/*",
-        "*://*.facebook.com/*"
+        "*://graph.facebook.com/*"
     ],
-
-    "browser_action":{
-        "default_title":"MozMeets",
-        "default_popup":"/popup/popup.html"
+    "applications": {
+        "gecko": {
+            "id": "mozmeets@moztgap.com"
+        }
+    },
+    "browser_action": {
+        "default_title": "MozMeets",
+        "default_popup": "/popup/popup.html"
     }
 }
